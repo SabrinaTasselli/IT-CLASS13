@@ -9,15 +9,13 @@ describe("Google Page search Wikipedia", () => {
     it("entering wikipedia in the browser", () =>{
         let input = $("form > div:nth-child(1) > div.A8SBwf > div.RNNXgb > div > div.a4bIc > input");
         input.addValue("wikipedia");
+        
         browser.keys("Enter");
         browser.pause(2000);
     });
-    it("find wikipedia in DOM", () =>{
-        let wikiPage = $("#rso > div:nth-child(1) > div > div > div.yuRUbf > a > h3");
-        expect(wikiPage).toExist();
-    });
     it("entering to Wikipedia page ", () =>{
-        let wikiPage = $("#rso > div:nth-child(1) > div > div > div.yuRUbf > a > h3");
+        let wikiPage = $("#rso > div:nth-child(1) > div > div > div > div > div.yuRUbf > a");
+        expect(wikiPage).toExist();
         wikiPage.click();
         browser.pause(2000);
     });
